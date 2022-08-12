@@ -1,11 +1,19 @@
-const counterValue = 0;
+let counterValue = 0;
 
-const btnEl = document.querySelector('div button');
+const decr = document.querySelector('button[data-action="decrement"]');
+const incr = document.querySelector('button[data-action="increment"]');
+const val = document.querySelector('#value');
 
-btnEl.addEventListener('click', () => {
-    const spanEl = document.querySelector('span');
+const countDecr = function(){
+    counterValue -=1;
+    val.textContent = counterValue;
+}
 
-    for (let i = 0; i >= counterValue; i += 1) {
-        spanEl += 1;
-    }
-});
+const countIncr = function(){
+    counterValue +=1;
+    val.textContent = counterValue;
+}
+
+decr.addEventListener('click', countDecr);
+incr.addEventListener('click', countIncr);
+
