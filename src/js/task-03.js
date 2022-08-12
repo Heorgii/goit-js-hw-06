@@ -13,16 +13,22 @@ const images = [
   },
 ];
 // 1
-const galleriEl = document.querySelector('ul');
+// const galleriEl = document.querySelector('ul');
 
-const elemetn = image
-.map(function({url, alt}) {
-  return `<li><img src = ${url} alt = ${alt} width = '350'></li>`;
-})
+for (let el of images){
+  document
+  .querySelector('gallery')
+  .insertAdjacentHTML("beforeend", `<li><img src = ${el.url} alt = ${el.alt}></li>`);
+}
 
-.join("");
+// const elemetn = image
+// .map(function({url, alt}) {
+//   return `<li><img src = ${url} alt = ${alt} width = '350'></li>`;
+// })
 
-galleriEl.insertAdjacentHTML('afterbegin', elemetn);
+// .join("");
+
+// galleriEl.insertAdjacentHTML('afterbegin', elemetn);
 
  // 2
 // const galleryEl = document.querySelector('ul');
@@ -41,12 +47,12 @@ galleriEl.insertAdjacentHTML('afterbegin', elemetn);
 
 // galleryEl.append(...element);
 
-console.log(galleryEl);
-galleryEl.style.cssText = 
-`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-`;
+// console.log(galleryEl);
+// galleryEl.style.cssText = 
+// `
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0;
+//   padding: 0;
+// `;
