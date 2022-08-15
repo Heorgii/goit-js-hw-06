@@ -15,12 +15,15 @@ const images = [
 
 
 const galleryEl = document.querySelector('.gallery');
+const galleryElArray = [];
+debugger;
+
 
 for(const el of images){
 
-  galleryEl.insertAdjacentHTML('beforeend',
+ galleryEl.insertAdjacentHTML('beforeend',
   `<li><img src = '${el.url}' alt = '${el.alt}' width = "350"></li>`);
-
+  
   galleryEl.style.cssText = `
   display: flex;
   align-items: center;
@@ -30,5 +33,8 @@ for(const el of images){
   padding: 0;
   `;
 }
+
+galleryEl.append(...elements);
+
 
 
